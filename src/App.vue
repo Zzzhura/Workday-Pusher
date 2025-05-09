@@ -5,6 +5,7 @@
     </transition>
 
     <div class="main-content" v-show="!showIntro">
+      <LoginForm />
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import IntroScreen from "./components/IntroScreen.vue";
+import LoginForm from "./components/LoginForm.vue";
 
 const showIntro = ref(true);
 
@@ -41,6 +43,9 @@ body {
 
 .main-content {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 </style>
