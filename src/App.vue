@@ -1,12 +1,46 @@
-<script setup>
-import Test from './components/Test.vue';
-</script>
-
 <template>
-  <div>
-    <Test />
+  <div id="app">
+    <transition name="fade">
+      <IntroScreen v-if="showIntro" />
+    </transition>
+
+    <div class="main-content" v-show="!showIntro">
+    </div>
   </div>
 </template>
 
-<style scoped>
+<script setup>
+import { ref, onMounted } from "vue";
+import IntroScreen from "./components/IntroScreen.vue";
+
+const showIntro = ref(true);
+
+onMounted(() => {
+  setTimeout(() => {
+    showIntro.value = false;
+  }, 4000);
+});
+</script>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.main-content {
+  min-height: 100vh;
+  color: white;
+}
 </style>
