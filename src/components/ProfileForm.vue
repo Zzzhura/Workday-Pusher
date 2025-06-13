@@ -12,6 +12,7 @@
         </div>
         <div class="info">
             <span class="user-info">Иван Журавлев</span>
+            <span>Организация: "ООО Альфа-Интегратор"</span>
             <span class="dolzhfun">Должность: Fullstack разработчик</span>
         </div>
     </div>
@@ -32,8 +33,8 @@
 }
 
 .avatar img {
-    width: 200%;
-    height: 200%;
+    width: auto;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
