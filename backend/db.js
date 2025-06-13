@@ -1,17 +1,28 @@
-const { Pool } = require("pg");
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
+import { createClient } from "@supabase/supabase-js";
 
+const supabaseUrl = "https://varmrdwdwojcrwayoouy.supabase.co";
+const supabaseKey = process.env.ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Тест подключения
 const testDB = async () => {
-  const client = await pool.connect();
-  const response = await client.query("SELECT NOW() as current_time");
-  console.log("response", response.rows);
-  client.release();
+  try {
+    console.log("Testing Supabase connection...");
+
+    const { data, error } = await supabase.from("test").select("*");
+
+    if (error) throw error;
+
+    console.log("Connection successful! Data sample:", data);
+  } catch (err) {
+    console.error("Connection error:", err.message);
+  }
 };
 
-testDB();
+await testDB();
 
-module.exports = pool;
+export default supabase;
