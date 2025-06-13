@@ -6,6 +6,7 @@
 
         <div class="main-content" v-show="!showIntro">
             <Header />
+            <ProfileForm />
         </div>
     </div>
 </template>
@@ -15,6 +16,7 @@ import { ref, onMounted } from "vue";
 import IntroScreen from "./components/IntroScreen.vue";
 import LoginForm from "./components/LoginForm.vue";
 import Header from "./components/Header.vue";
+import ProfileForm from "./components/ProfileForm.vue";
 
 const showIntro = ref(true);
 
@@ -43,6 +45,8 @@ body {
 }
 
 .main-content {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     display: flex;
     color: white;
