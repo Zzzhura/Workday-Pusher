@@ -7,6 +7,7 @@
         <div class="main-content" v-show="!showIntro">
             <Header />
             <ProfileForm />
+            <TimeTracker />
         </div>
     </div>
 </template>
@@ -17,6 +18,7 @@ import IntroScreen from "./components/IntroScreen.vue";
 import LoginForm from "./components/LoginForm.vue";
 import Header from "./components/Header.vue";
 import ProfileForm from "./components/ProfileForm.vue";
+import TimeTracker from "./components/TimeTracker.vue";
 
 const showIntro = ref(true);
 
@@ -31,7 +33,7 @@ onMounted(() => {
 body {
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #white;
     font-family: Arial, sans-serif;
 }
 
