@@ -23,7 +23,7 @@
                 class="control-button reset-button"
                 :disabled="totalSeconds === 0"
             >
-                Сброс
+                Завершить сессию
             </button>
         </div>
 
@@ -45,6 +45,8 @@ import { ref, computed, onUnmounted } from "vue";
 const isRunning = ref(false);
 const totalSeconds = ref(0);
 let timerId = null;
+const startTime = ref(0);
+const endTime = ref(0);
 
 const formattedHours = computed(() => {
     return Math.floor(totalSeconds.value / 3600)
@@ -63,6 +65,7 @@ const startTimer = () => {
     timerId = setInterval(() => {
         totalSeconds.value += 1;
     }, 1000);
+    startTime.value = new Date();
 };
 
 const pauseTimer = () => {
@@ -74,6 +77,9 @@ const resetTimer = () => {
     isRunning.value = false;
     totalSeconds.value = 0;
     clearInterval(timerId);
+    endTime.value = new Date();
+    const finalTime =
+        (endTime.value.getTime() - startTime.value.getTime()) / 1000;
 };
 
 onUnmounted(() => {
