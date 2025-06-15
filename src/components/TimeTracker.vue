@@ -86,14 +86,14 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    justify-content: center;
+    margin: 20px auto;
     gap: 1.5rem;
     font-family: "Arial", sans-serif;
     padding: 2rem;
     background: #f8f9fa;
     border-radius: 16px;
     max-width: 400px;
-    margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 

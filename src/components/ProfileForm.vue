@@ -3,8 +3,11 @@
         style="
             background-color: white;
             border: 2px solid grey;
+            margin: 20px;
+            border-radius: 10px;
             display: flex;
             flex-direction: row;
+            width: 50%;
         "
     >
         <div class="avatar">
@@ -12,8 +15,13 @@
         </div>
         <div class="info">
             <span class="user-info">Иван Журавлев</span>
-            <span>Организация: "ООО Альфа-Интегратор"</span>
             <span class="dolzhfun">Должность: Fullstack разработчик</span>
+            <span style="font-size: 14px; font-weight: 500"
+                >Организация: "ООО Альфа-Интегратор"</span
+            >
+            <span style="font-size: 14px; font-weight: 500"
+                >Местоположение: Россия, Санкт-Петербург</span
+            >
         </div>
     </div>
 </template>
@@ -26,7 +34,7 @@
     height: 100px;
     margin: 60px;
     margin-right: 20px;
-    margin-left: 130px;
+    margin-left: 90px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid grey;
@@ -47,8 +55,8 @@
     color: black;
     font-size: 16px;
     padding: 20px 0;
-    margin-bottom: 50px;
-    line-height: 1.5; /* Улучшаем межстрочный интервал */
+    margin-bottom: 110px;
+    line-height: 1.5;
 }
 
 .user-info {
