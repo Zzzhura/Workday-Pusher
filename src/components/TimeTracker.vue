@@ -45,6 +45,8 @@ import { ref, computed, onUnmounted } from "vue";
 const isRunning = ref(false);
 const totalSeconds = ref(0);
 let timerId = null;
+const startFullDate = ref(null);
+const endFullDate = ref(null);
 const startTime = ref(0);
 const endTime = ref(0);
 
@@ -66,6 +68,7 @@ const startTimer = () => {
         totalSeconds.value += 1;
     }, 1000);
     startTime.value = new Date();
+    startFullDate.value = new Date();
 };
 
 const pauseTimer = () => {
@@ -77,9 +80,16 @@ const resetTimer = () => {
     isRunning.value = false;
     totalSeconds.value = 0;
     clearInterval(timerId);
+    endFullDate.value = new Date();
     endTime.value = new Date();
     const finalTime =
         (endTime.value.getTime() - startTime.value.getTime()) / 1000;
+    const objToPush = {
+        startTime: startFullDate.value,
+        endTime: endFullDate.value,
+        duration: finalTime / 1000,
+    };
+    console.log(objToPush);
 };
 
 onUnmounted(() => {
