@@ -44,7 +44,7 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ onMounted(() => {
 
 .project-title {
     font-size: 4rem;
-    color: black;
+    color: white;
     font-weight: 700;
     text-align: center;
 }

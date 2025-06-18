@@ -22,7 +22,6 @@ import LoginForm from "./components/LoginForm.vue";
 import Header from "./components/Header.vue";
 import ProfileForm from "./components/ProfileForm.vue";
 import TimeTracker from "./components/TimeTracker.vue";
-import circuitBoard from "./assets/circuit-board.svg";
 
 const showIntro = ref(true);
 
